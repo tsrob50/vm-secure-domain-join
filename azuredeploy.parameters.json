@@ -6,36 +6,36 @@
             "value": "centralus"
         },
         "virtualMachineName": {
-            "value": "azsynctest01"
+            "value": "VMNAME"
         },
         "virtualMachineSize": {
             "value": "Standard_A1_v2"
         },
         "adminUsername": {
-            "value": "ciradmin"
+            "value": "ADMINACCOUNT"
         },
         "adminPassword": {
           "reference": {
           "keyVault": {
-            "id": "/subscriptions/dd7abc6d-27c2-4030-9046-b9a8c9477e60/resourceGroups/CentralKV01/providers/Microsoft.KeyVault/vaults/CentralDiskEncrypKV01"
+            "id": "/URI_TO_KEYVAULT"
           },
-          "secretName": "LocalAdmin"
+          "secretName": "KEYVULT_SECRET_NAME"
         }
         },
         "virtualNetworkResourceGroup":{
-            "value": "CirRG"
+            "value": "NETWORK_RG"
         },
         "virtualNetworkName": {
-            "value": "CirVNET"
+            "value": "NETWORK_NAME"
         },
         "subnetName": {
-            "value": "default"
+            "value": "SUBNET_NAME"
         },
         "ipAddress": {
-            "value": "10.0.0.31"
+            "value": "SERVER_IP"
         },
         "availabilitySetName": {
-            "value": "azFileSyncTest"
+            "value": "AVAILABILITY_SET"
         },
         "availabilitySetPlatformFaultDomainCount": {
             "value": "2"
@@ -44,30 +44,30 @@
             "value": "5"
         },
         "storageAccountName": {
-            "value": "azfilesyncsstrglrs"
+            "value": "STORAGE_ACCOUNT_NAME"
         },
         "storageAccountType": {
-            "value": "Standard_LRS"
+            "value": "STORAGE_ACCOUNT_TYPE"
         },
         "sizeOfDataDisksInGB": {
             "value": "1023"
         },
         "domainToJoin": {
-            "value": "ciraltos.com"
+            "value": "DOMAIN.COM"
         },
         "domainUsername": {
-            "value": "Administrator"
+            "value": "DOMAIN_JOIN_ACCOUNT"
         },
         "domainPassword": {
           "reference": {
           "keyVault": {
-            "id": "/subscriptions/dd7abc6d-27c2-4030-9046-b9a8c9477e60/resourceGroups/CentralKV01/providers/Microsoft.KeyVault/vaults/CentralDiskEncrypKV01"
+            "id": "/URI_TO_KEYVAULT"
           },
-          "secretName": "DomainAdmin"
+          "secretName": "KEYVAULT_SECRET_NAME"
         }
         },
         "ouPath": {
-            "value": "OU=SERVERS,DC=ciraltos,DC=com"
+            "value": "OU=SERVERS,DC=DOMAIN,DC=com"
         },
         "domainJoinOptions": {
             "value": 3
