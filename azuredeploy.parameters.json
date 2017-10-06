@@ -1,0 +1,76 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "virtualMachineName": {
+            "value": "azsynctest01"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_A1_v2"
+        },
+        "adminUsername": {
+            "value": "ciradmin"
+        },
+        "adminPassword": {
+          "reference": {
+          "keyVault": {
+            "id": "/subscriptions/dd7abc6d-27c2-4030-9046-b9a8c9477e60/resourceGroups/CentralKV01/providers/Microsoft.KeyVault/vaults/CentralDiskEncrypKV01"
+          },
+          "secretName": "LocalAdmin"
+        }
+        },
+        "virtualNetworkResourceGroup":{
+            "value": "CirRG"
+        },
+        "virtualNetworkName": {
+            "value": "CirVNET"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "ipAddress": {
+            "value": "10.0.0.31"
+        },
+        "availabilitySetName": {
+            "value": "azFileSyncTest"
+        },
+        "availabilitySetPlatformFaultDomainCount": {
+            "value": "2"
+        },
+        "availabilitySetPlatformUpdateDomainCount": {
+            "value": "5"
+        },
+        "storageAccountName": {
+            "value": "azfilesyncsstrglrs"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "sizeOfDataDisksInGB": {
+            "value": "1023"
+        },
+        "domainToJoin": {
+            "value": "ciraltos.com"
+        },
+        "domainUsername": {
+            "value": "Administrator"
+        },
+        "domainPassword": {
+          "reference": {
+          "keyVault": {
+            "id": "/subscriptions/dd7abc6d-27c2-4030-9046-b9a8c9477e60/resourceGroups/CentralKV01/providers/Microsoft.KeyVault/vaults/CentralDiskEncrypKV01"
+          },
+          "secretName": "DomainAdmin"
+        }
+        },
+        "ouPath": {
+            "value": "OU=SERVERS,DC=ciraltos,DC=com"
+        },
+        "domainJoinOptions": {
+            "value": 3
+        }
+    }
+}
